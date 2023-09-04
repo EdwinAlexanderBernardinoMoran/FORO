@@ -29,6 +29,9 @@ class ShowThread extends Component
 
     public function render()
     {
-        return view('livewire.show-thread');
+        // Consultar a las respuestas
+        return view('livewire.show-thread', [
+            'replies' => $this->thread->replies()->get()
+        ]);
     }
 }
